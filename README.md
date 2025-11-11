@@ -19,34 +19,38 @@ It integrates **sensor input** and **state-based logic** to ensure real-time ava
 
 ## 🧩 System Architecture
 SystemToBe/
-├── Booking.java                # Handles booking creation, editing, extension, and cancellation
-├── Client.java                 # Base class representing different user types
-├── ClientFactory.java          # Factory class for creating Client objects
-├── Command.java                # Command interface for executing operations
-├── ConcreteParkingSpace.java   # Implements Observer; handles space occupancy and notifications
-├── creditCard.java             # Stores and validates user credit card details
-├── Faculty.java                # User subclass representing faculty members
-├── FreeState.java              # State representing a free parking space
-├── Main.java                   # Main entry point for running the system
-├── ManagementAccounts.java     # Handles management users and their operations
-├── MySystem.java               # Utility class coordinating system operations
-├── NonFaculty.java             # User subclass representing non-faculty members
-├── Observer.java               # Observer interface for event updates
-├── OccupiedState.java          # State representing an occupied parking space
-├── Parkinglot.java             # Represents a physical parking lot with multiple spaces
-├── ParkingLotDisable.java      # Command to disable a parking lot
-├── ParkingLotEnable.java       # Command to enable a parking lot
-├── ParkingSpace.java           # Abstract class defining parking space behavior
-├── ParkingSpaceDisable.java    # Command to disable a specific parking space
-├── ParkingSpaceEnable.java     # Command to enable a specific parking space
-├── ParkingSpaceState.java      # Interface for parking space state transitions
-├── ParkingSystem.java          # Singleton controller for managing lots and managers
-├── Payment.java                # Handles payment processing and validation
-├── Sensor.java                 # Interface for sensors monitoring parking spaces
-├── Student.java                # User subclass representing students
-├── SuperManager.java           # Special management user with elevated permissions
-├── Visitor.java                # User subclass representing visitors
-└── … (supporting domain classes and utility components)
+├── booking/
+│ ├── Booking.java
+│ └── Payment.java
+├── clients/
+│ ├── Client.java
+│ ├── ClientFactory.java
+│ ├── Faculty.java
+│ ├── NonFaculty.java
+│ ├── Student.java
+│ ├── SuperManager.java
+│ └── Visitor.java
+├── management/
+│ ├── Command.java
+│ ├── ManagementAccounts.java
+│ ├── ParkingLotDisable.java
+│ ├── ParkingLotEnable.java
+│ ├── ParkingSpaceDisable.java
+│ └── ParkingSpaceEnable.java
+├── parking/
+│ ├── ConcreteParkingSpace.java
+│ ├── FreeState.java
+│ ├── OccupiedState.java
+│ ├── Observer.java
+│ ├── Parkinglot.java
+│ ├── ParkingSpace.java
+│ ├── ParkingSpaceState.java
+│ └── Sensor.java
+└── utilities/
+├── creditCard.java
+├── Main.java
+├── MySystem.java
+└── ParkingSystem.java
 
 ---
 
@@ -55,6 +59,8 @@ SystemToBe/
 - **Java 8+**  
 - **IDE** — IntelliJ IDEA, Eclipse, or NetBeans  
 - **JUnit 5** for testing
+
+---
 
 ## 🧠 Core Features
 
@@ -96,13 +102,13 @@ System.out.println("End time: " + booking.getEndTime());
 - Payment.java validates user transactions and links them to active bookings.
 - Ensures secure, modular payment management.
 
-⸻
+---
 
 📄 License
 
 This project is distributed for educational and non-commercial use under the MIT License.
 
-⸻
+---
 
 🧾 In Summary
 
